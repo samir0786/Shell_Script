@@ -1,20 +1,22 @@
 #!/bin/bash -x
-#function palindromes(){
-echo "Enter the number"
-read n
+function palindromes(){
 number=$n
 reverse=0
 while [ $n -gt 0 ]
 do
-a=`expr $n % 10 `
-n=`expr $n / 10 `
-reverse=`expr $reverse \* 10 + $a`
+	a=`expr $n % 10 `
+	reverse=`expr $reverse \* 10 + $a`
+	n=`expr $n / 10 `
 done
-echo $reverse
-if [ $number -eq $reverse ]
-then
-    echo "Number is palindrome"
-else
-	echo "Number is not palindrome"
+	echo $reverse
+	if [ $number -eq $reverse ]
+	then
+		echo "Number is palindrome"
+	else
+		echo "Number is not palindrome"
 
-fi
+	fi
+}
+		echo "Enter the number"
+		read n
+		palindromes $n 
